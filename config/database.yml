@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: bp_mart_development
+
+test:
+  adapter: postgresql
+  database: bp_mart_test

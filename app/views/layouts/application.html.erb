@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= flash[:alert] %>
+<%= flash[:notice] %>
 <% if current_user && current_user.account_type == true %>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -27,6 +29,7 @@
         <li class="active"><%= link_to "Home", user_path(current_user) %> </a></li>
         <li class="active"><%= link_to "Create Users", new_user_path %> </a></li>
         <li class="active"><%= link_to "Create New Product", new_product_path %> </a></li>
+
     </div>
       </ul>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,7 +41,7 @@
     </div>
   </div>
 </nav>
-<% elsif current_user%>
+<% elsif current_user %>
 
   <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -56,7 +59,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Home", root_url %> </a></li>
+        <li class="active"><%= link_to "Home", user_path(current_user)%> </a></li>
         </div>
       </ul>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,7 +72,8 @@
   </div>
 </nav>
 <% end %>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    @products = Product.all
+  end
+
   private
     def user_params
      params.require(:user).permit(:name, :email, :password, :password_confirmation, :account_type)

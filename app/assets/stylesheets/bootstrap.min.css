@@ -1,7 +1,15 @@
 .container {
   max-width: 650px;
 }
-
+.form-group
+{
+  padding-left: 15px;
+  padding-right: 30px;
+  text-align: center;
+}
+.new-submit-button {
+  text-align: center;
+}
 .jumbotron {
   padding: 15px;
   margin-bottom: 30px;

@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save?
+    if @product.save
       flash[:notice] = "Product Added."
       redirect_to root_url
     else

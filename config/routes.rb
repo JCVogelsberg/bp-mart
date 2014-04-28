@@ -1,9 +1,10 @@
 BpMart::Application.routes.draw do
-root :to => 'products#index'
-
-get 'login', to: 'sessions#new', as: 'login'
-
-resources :products
-resources :users
-resources :sessions
+  root :to => 'application#index'
+  resources :products, :except => [:new, :edit]
 end
+
+
+
+
+# resources :users
+# resources :sessions

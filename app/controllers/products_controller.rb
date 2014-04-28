@@ -1,50 +1,41 @@
 class ProductsController < ApplicationController
-
   def index
     @products = Product.all
-  end
-
-  def new
-    @product = Product.new
+    render :json => @products
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:notice] = "Product Added."
-      redirect_to product_path(@product)
+      render :json => @product, :status => 201
     else
-      render 'new'
+      render :json => {:errors => @product.errors}, :status => 422
     end
   end
 
   def show
     @product = Product.find(params[:id])
-  end
-
-  def edit
-    @product = Product.find(params[:id])
+    render :json => @product
   end
 
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to product_path(@product)
+      head :no_content
     else
-      render 'edit'
+      render :json => {:errors => @product.errors}, :status => 422
     end
   end
 
   def destroy
      @product = Product.find(params[:id])
      @product.destroy
-     redirect_to products_path
+     head :no_content
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :photo)
+    params.fetch(:product).permit(:name, :price, :description, :photo)
   end
-
 end

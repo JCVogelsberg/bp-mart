@@ -6,20 +6,20 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'bcrypt-ruby'
 gem 'smarter_csv'
 gem 'less-rails-bootstrap'
 gem 'therubyracer'
+gem 'ember-rails'
+gem 'ember-data-source', '~> 1.0.0.beta.7'
 
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
-  gem "therubyracer"
   gem "less-rails"
 end
 

@@ -1,0 +1,19 @@
+<h1>BP Mart</h1>
+<br><br>
+<h4>This Week's Specials:</h4>
+<br>
+
+<div class="col-md-8">
+  <ul>
+  {{#each product in controller itemController='product'}}
+    <li>{{#link-to 'product' product}}{{name}}{{/link-to}}
+      <button {{action deleteProduct}} class="btn btn-danger btn-xs">Delete</button></li>
+  {{/each}}
+  </ul>
+
+  {{#link-to 'new_product'}}New Product{{/link-to}}
+</div>
+
+<div class="col-md-4">
+  {{outlet}}
+</div>

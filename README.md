@@ -1,6 +1,6 @@
 bp-mart
 ===
-Rails/Ember.js CRUD app, 1st attempt at Ember
+Rails/Ember.js CRUD app, 1st attempt at using Ember and Handlebars with Rails
 * * *
 
 - As a store owner, I want to create a new entry for a product with a name, price, and description.
